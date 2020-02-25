@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQuery Intro</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+    <style>
+        .bold { font-weight: bold; }
+        .yellow-bg{ background: yellow}
+        .full-width { width: 80% !important;}
+        .padding-2 { padding: 2em}
+        .text-center { text-align: center !important; align-content: center}
+
+    </style>
+</head>
+<body>
+
+<form action="#" method="post" id="users">
+    <div class="row  padding-2">
+        <div class="col-5">
+            <div class="form-group form-inline full-width text-center">
+                <label for="movieTitle">Title &nbsp;</label>
+                <input type="text" class="form-control full-width" id="movieTitle" placeholder="Movie title">
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group form-inline text-center">
+                <label for="movieRate">Rating &nbsp;</label>
+                <input type="number" class="form-control full-width" id="movieRate" placeholder="Movie rating">
+            </div>
+
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn btn-danger" id="addMovie">Add Movie</button>
+        </div>
+    </div>
+
+    <table id="example" class="display" style="width:100%">
+
+    </table>
+
+</form>
+
+<script>
+
+    $( document ).ready(function() {
+       $('#addMovie').click(function () {
+           $('#contentTable').append("<tr>\n" +
+               "            <td>" + $('#movieTitle').val()+ "</td>\n" +
+               "            <td>" + $('#movieRate').val()+ "</td>\n" +
+               "            <td> <button type='button' class='btn btn-danger' id='deleteMovie'>Add Movie</button></td>\n" +
+               "        </tr>\n")
+       });
+
+        $('#movieTitle').val('')
+        $('#movieRate').val('')
+
+
+
+
+
+        $('#example').DataTable();
+    });
+
+</script>
+</body>
+</html>
